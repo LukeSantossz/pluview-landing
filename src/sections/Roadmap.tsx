@@ -50,20 +50,18 @@ export default function Roadmap() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+            <span style={{ color: 'var(--text-primary)' }}>Próximos </span>
+            <span className="gradient-text-subtle">passos</span>
+          </h2>
+
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-4 sm:mb-6">
             <Rocket className="w-4 h-4" style={{ color: 'var(--secondary)' }} />
-            <span className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+            <span className="text-xs sm:text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
               Em Constante Evolução
             </span>
           </div>
 
-          <span className="text-sm font-medium tracking-widest uppercase mb-3 block" style={{ color: 'var(--secondary)' }}>
-            Visão de Futuro
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            <span style={{ color: 'var(--text-primary)' }}>Próximos </span>
-            <span className="gradient-text-subtle">passos</span>
-          </h2>
           <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
             Nossa jornada de inovação continua com foco em escalabilidade e inteligência de dados
           </p>

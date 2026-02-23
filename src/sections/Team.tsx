@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Linkedin, ExternalLink } from 'lucide-react'
+import { Linkedin, ExternalLink, Users } from 'lucide-react'
 import SectionTransition from '../components/SectionTransition'
 
 interface TeamMember {
@@ -169,13 +169,18 @@ export default function Team() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <span className="text-sm font-medium tracking-widest uppercase mb-3 block" style={{ color: 'var(--accent)' }}>
-            Nossa Equipe
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             <span style={{ color: 'var(--text-primary)' }}>Quem faz </span>
             <span className="gradient-text">acontecer</span>
           </h2>
+
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-4 sm:mb-6">
+            <Users className="w-4 h-4" style={{ color: 'var(--accent)' }} />
+            <span className="text-xs sm:text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+              Nossa Equipe
+            </span>
+          </div>
+
           <p className="text-base sm:text-lg max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
             Talentos que transformaram uma ideia em realidade
           </p>

@@ -68,20 +68,18 @@ export default function Gallery() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10 sm:mb-14"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
+            <span style={{ color: 'var(--text-primary)' }}>Registros do </span>
+            <span className="gradient-text">projeto</span>
+          </h2>
+
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-4 sm:mb-6">
             <Beaker className="w-4 h-4" style={{ color: 'var(--tertiary)' }} />
-            <span className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+            <span className="text-xs sm:text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
               Prova de Conceito — Instituto Cultivar Progresso
             </span>
           </div>
 
-          <span className="text-sm font-medium tracking-widest uppercase mb-3 block" style={{ color: 'var(--tertiary)' }}>
-            Galeria
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-            <span style={{ color: 'var(--text-primary)' }}>Registros do </span>
-            <span className="gradient-text">projeto</span>
-          </h2>
           <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
             Momentos que marcaram o desenvolvimento e validação em campo
           </p>

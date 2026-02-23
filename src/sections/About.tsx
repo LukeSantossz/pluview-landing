@@ -71,13 +71,18 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <span className="text-sm font-medium tracking-widest uppercase mb-3 block" style={{ color: 'var(--accent)' }}>
-            Nossa História
-          </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
             <span style={{ color: 'var(--text-primary)' }}>Do problema à </span>
             <span className="gradient-text">solução</span>
           </h2>
+
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-4 sm:mb-6">
+            <Leaf className="w-4 h-4" style={{ color: 'var(--accent)' }} />
+            <span className="text-xs sm:text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
+              Nossa História
+            </span>
+          </div>
+
           <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
             Uma jornada de inovação para transformar a agricultura de precisão no Brasil
           </p>

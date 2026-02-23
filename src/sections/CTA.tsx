@@ -22,28 +22,28 @@ export default function CTA() {
       />
 
       <div ref={ref} className="relative z-10 max-w-3xl mx-auto text-center">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6 sm:mb-8"
-        >
-          <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: 'var(--accent)' }} />
-          <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>Projeto em desenvolvimento ativo</span>
-        </motion.div>
-
         {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.6 }}
           className="font-display text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6"
         >
           <span style={{ color: 'var(--text-primary)' }}>Interessado no </span>
           <span className="gradient-text">PluView</span>
           <span style={{ color: 'var(--text-primary)' }}>?</span>
         </motion.h2>
+
+        {/* Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-4 sm:mb-6"
+        >
+          <span className="w-2 h-2 rounded-full animate-pulse" style={{ background: 'var(--accent)' }} />
+          <span className="text-xs sm:text-sm" style={{ color: 'var(--text-secondary)' }}>Projeto em desenvolvimento ativo</span>
+        </motion.div>
 
         {/* Description */}
         <motion.p
