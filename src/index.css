@@ -1,0 +1,428 @@
+/* Fonts are loaded in index.html for better performance */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   THEME VARIABLES - HARMONIOUS PALETTES
+   ======================================== */
+
+/* Dark Theme - Rich deep blues with high contrast typography */
+:root {
+  --bg-base: #0d1117;
+  --bg-primary: #161b22;
+  --bg-secondary: #1c2128;
+  --bg-tertiary: #242b35;
+  --bg-card: #1c2128;
+  --bg-elevated: #2d333b;
+
+  --text-primary: #ffffff;
+  --text-secondary: #c9d1d9;
+  --text-tertiary: #a8b2bd;
+  --text-muted: #8b949e;
+
+  --accent: #10b981;
+  --accent-soft: rgba(16, 185, 129, 0.15);
+  --secondary: #06b6d4;
+  --secondary-soft: rgba(6, 182, 212, 0.15);
+  --tertiary: #8b5cf6;
+  --tertiary-soft: rgba(139, 92, 246, 0.15);
+  --danger: #f85149;
+  --warning: #d29922;
+
+  --border-color: rgba(240, 246, 252, 0.1);
+  --border-strong: rgba(240, 246, 252, 0.15);
+  --glow: rgba(16, 185, 129, 0.25);
+  --shadow: rgba(0, 0, 0, 0.4);
+  --overlay: rgba(13, 17, 23, 0.85);
+
+  --gradient-section: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-primary) 50%, var(--bg-base) 100%);
+}
+
+/* Light Theme - Vibrant and elegant */
+:root.light {
+  --bg-base: #ffffff;
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-elevated: #fafafa;
+
+  --text-primary: #0f172a;
+  --text-secondary: #1e293b;
+  --text-tertiary: #334155;
+  --text-muted: #64748b;
+
+  --accent: #059669;
+  --accent-soft: rgba(5, 150, 105, 0.12);
+  --secondary: #0284c7;
+  --secondary-soft: rgba(2, 132, 199, 0.12);
+  --tertiary: #7c3aed;
+  --tertiary-soft: rgba(124, 58, 237, 0.12);
+  --danger: #dc2626;
+  --warning: #d97706;
+
+  --border-color: rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(15, 23, 42, 0.12);
+  --glow: rgba(5, 150, 105, 0.2);
+  --shadow: rgba(15, 23, 42, 0.06);
+  --overlay: rgba(255, 255, 255, 0.95);
+
+  --gradient-section: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-primary) 50%, var(--bg-base) 100%);
+}
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(16, 185, 129, 0.3);
+  color: var(--accent);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 5px;
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+
+.font-display {
+  font-family: 'Outfit', system-ui, sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 50%, var(--tertiary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-subtle {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   SECTION TRANSITIONS - SEAMLESS FLOW
+   ======================================== */
+
+.section-flow {
+  position: relative;
+  padding: 5rem 1rem;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .section-flow {
+    padding: 6rem 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-flow {
+    padding: 8rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-flow {
+    padding: 10rem 2rem;
+  }
+}
+
+/* Section divider - wave transition */
+.section-divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 150px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-divider-top {
+  top: 0;
+  background: linear-gradient(to bottom, var(--bg-base), transparent);
+}
+
+.section-divider-bottom {
+  bottom: 0;
+  background: linear-gradient(to top, var(--bg-base), transparent);
+}
+
+/* Curved divider using SVG */
+.section-curve {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 80px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.section-curve-top {
+  top: -1px;
+}
+
+.section-curve-bottom {
+  bottom: -1px;
+  transform: rotate(180deg);
+}
+
+.section-curve svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--bg-base);
+}
+
+/* Floating orbs for ambient effect */
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.5;
+  animation: float 20s ease-in-out infinite;
+}
+
+.light .ambient-orb {
+  opacity: 0.25;
+  filter: blur(100px);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+}
+
+/* ========================================
+   COMPONENTS
+   ======================================== */
+
+/* Glass effect */
+.glass {
+  background: var(--overlay);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 30px var(--shadow);
+}
+
+/* Navbar glass - more opaque for readability */
+nav.glass {
+  background: var(--bg-base);
+  background: linear-gradient(180deg, var(--bg-base) 0%, rgba(var(--bg-base), 0.95) 100%);
+  border-bottom: 1px solid var(--border-strong);
+}
+
+:root nav.glass {
+  background: rgba(13, 17, 23, 0.95);
+}
+
+:root.light nav.glass {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px var(--shadow);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 40px var(--glow);
+  transform: translateY(-4px);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--accent) 0%, #059669 100%);
+  color: white;
+  font-weight: 600;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px var(--glow);
+  font-size: 0.9375rem;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px var(--glow);
+  filter: brightness(1.1);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-weight: 500;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border-strong);
+  transition: all 0.3s ease;
+  font-size: 0.9375rem;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-elevated);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   BACKGROUNDS
+   ======================================== */
+
+.bg-grid {
+  background-image:
+    linear-gradient(var(--border-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.video-overlay {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(13, 17, 23, 0.2) 20%,
+    rgba(13, 17, 23, 0.6) 60%,
+    var(--bg-base) 100%
+  );
+}
+
+.light .video-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.4) 30%,
+    rgba(255, 255, 255, 0.85) 70%,
+    var(--bg-base) 100%
+  );
+}
+
+/* Light theme glass - more visible */
+.light .glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+}
+
+/* ========================================
+   TEAM CARDS
+   ======================================== */
+
+.team-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--secondary), var(--tertiary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+.img-hover {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-hover:hover {
+  transform: scale(1.05);
+}
+
+.link-hover {
+  position: relative;
+}
+
+.link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.link-hover:hover::after {
+  width: 100%;
+}
+
+/* ========================================
+   SMOOTH TRANSITIONS
+   ======================================== */
+
+body, .card, .glass, .btn-primary, .btn-secondary {
+  transition: background-color 0.3s ease,
+              border-color 0.3s ease,
+              color 0.3s ease,
+              box-shadow 0.3s ease;
+}
