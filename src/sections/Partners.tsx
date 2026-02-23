@@ -73,8 +73,8 @@ function PartnerLogo({ partner }: { partner: Partner }) {
 export default function Partners() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
-  // Triple partners array for seamless infinite loop
-  const duplicatedPartners = [...partners, ...partners, ...partners]
+  // Duplicate partners array for seamless infinite loop
+  const duplicatedPartners = [...partners, ...partners]
 
   return (
     <section id="partners" className="section-flow relative" style={{ background: 'var(--bg-primary)' }}>

@@ -380,7 +380,9 @@ nav.glass {
    ======================================== */
 
 .animate-carousel {
-  animation: carousel 15s linear infinite;
+  display: flex;
+  width: fit-content;
+  animation: carousel 20s linear infinite;
 }
 
 .animate-carousel:hover {
@@ -388,11 +390,11 @@ nav.glass {
 }
 
 @keyframes carousel {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(-33.333%);
+  to {
+    transform: translateX(-50%);
   }
 }
 
