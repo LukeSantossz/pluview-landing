@@ -46,30 +46,38 @@ function PartnerLogo({ partner }: { partner: Partner }) {
       className="group flex-shrink-0 mx-6 sm:mx-8 md:mx-10"
       title={partner.name}
     >
+      {/* Card with consistent white/light background for all logos */}
       <div
-        className="flex items-center justify-center p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl"
+        className="flex items-center justify-center p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl bg-white"
         style={{
-          background: 'var(--bg-card)',
-          border: '1px solid var(--border-color)',
-          minWidth: '220px',
-          maxWidth: '320px',
-          height: '140px',
+          minWidth: '240px',
+          maxWidth: '340px',
+          height: '150px',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
         }}
       >
         <img
           src={partner.logo}
           alt={partner.name}
-          className="max-w-full max-h-full object-contain opacity-70 group-hover:opacity-100 transition-all duration-300"
+          className="max-w-full max-h-full object-contain opacity-80 group-hover:opacity-100 transition-all duration-300"
           style={{
-            maxHeight: '100px',
-            filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.1))',
+            maxHeight: '110px',
+            maxWidth: '280px',
           }}
+          loading="lazy"
           onError={(e) => {
             const target = e.target as HTMLImageElement
-            target.style.display = 'none'
-            const parent = target.parentElement
-            if (parent) {
-              parent.innerHTML = `<span class="font-display font-bold text-lg sm:text-xl" style="color: var(--text-primary)">${partner.name}</span>`
+            // Try to reload once
+            if (!target.dataset.retried) {
+              target.dataset.retried = 'true'
+              target.src = partner.logo + '?retry=1'
+            } else {
+              // Show fallback text
+              target.style.display = 'none'
+              const parent = target.parentElement
+              if (parent) {
+                parent.innerHTML = `<span class="font-display font-bold text-lg sm:text-xl text-gray-700">${partner.name}</span>`
+              }
             }
           }}
         />
