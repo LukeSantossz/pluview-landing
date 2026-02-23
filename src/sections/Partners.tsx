@@ -37,8 +37,47 @@ const partners: Partner[] = [
   },
 ]
 
+function PartnerLogo({ partner }: { partner: Partner }) {
+  return (
+    <a
+      href={partner.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex-shrink-0 mx-6 sm:mx-8 md:mx-12"
+      title={partner.name}
+    >
+      <div
+        className="flex items-center justify-center p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-white transition-all duration-300 group-hover:shadow-lg group-hover:scale-105"
+        style={{
+          minWidth: '160px',
+          maxWidth: '220px',
+          height: '90px',
+        }}
+      >
+        <img
+          src={partner.logo}
+          alt={partner.name}
+          className="max-w-full max-h-full object-contain opacity-60 group-hover:opacity-100 transition-all duration-300"
+          style={{ maxHeight: '55px' }}
+          onError={(e) => {
+            const target = e.target as HTMLImageElement
+            target.style.display = 'none'
+            const parent = target.parentElement
+            if (parent) {
+              parent.innerHTML = `<span class="font-display font-bold text-sm sm:text-base text-gray-500 group-hover:text-gray-800 transition-colors">${partner.name}</span>`
+            }
+          }}
+        />
+      </div>
+    </a>
+  )
+}
+
 export default function Partners() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
+
+  // Duplicate partners array for seamless infinite scroll
+  const duplicatedPartners = [...partners, ...partners]
 
   return (
     <section id="partners" className="section-flow relative" style={{ background: 'var(--bg-primary)' }}>
@@ -48,18 +87,18 @@ export default function Partners() {
       {/* Background */}
       <div className="absolute inset-0 bg-grid opacity-15" />
 
-      <div ref={ref} className="relative z-10 max-w-6xl mx-auto">
+      <div ref={ref} className="relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 sm:mb-14"
+          className="text-center mb-10 sm:mb-14 max-w-6xl mx-auto px-4"
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-4 sm:mb-6">
             <Handshake className="w-4 h-4" style={{ color: 'var(--tertiary)' }} />
             <span className="text-xs sm:text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
-              Parcerias que fortalecem
+              Ninguém cresce sozinho, nossos parceiros
             </span>
           </div>
 
@@ -78,67 +117,41 @@ export default function Partners() {
           </p>
         </motion.div>
 
-        {/* Partners Logos - Large and prominent */}
+        {/* Infinite Carousel */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap items-center justify-center gap-6 sm:gap-8 md:gap-12 lg:gap-16"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="relative overflow-hidden"
         >
-          {partners.map((partner, index) => (
-            <motion.a
-              key={partner.name}
-              href={partner.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              className="group relative"
-              title={partner.name}
-            >
-              {/* Logo container with white background for visibility */}
-              <div
-                className="relative flex items-center justify-center p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-white transition-all duration-300 group-hover:shadow-xl group-hover:scale-105"
-                style={{
-                  minWidth: '140px',
-                  maxWidth: '200px',
-                  height: '80px',
-                }}
-              >
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="max-w-full max-h-full object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-                  style={{ maxHeight: '50px' }}
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement
-                    target.style.display = 'none'
-                    const parent = target.parentElement
-                    if (parent) {
-                      parent.innerHTML = `<span class="font-display font-bold text-sm sm:text-base text-gray-600 group-hover:text-gray-900 transition-colors">${partner.name}</span>`
-                    }
-                  }}
-                />
-              </div>
+          {/* Gradient masks for smooth edges */}
+          <div
+            className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 z-10 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to right, var(--bg-primary), transparent)',
+            }}
+          />
+          <div
+            className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 z-10 pointer-events-none"
+            style={{
+              background: 'linear-gradient(to left, var(--bg-primary), transparent)',
+            }}
+          />
 
-              {/* Tooltip on hover */}
-              <div
-                className="absolute -bottom-8 left-1/2 -translate-x-1/2 px-3 py-1 rounded-lg text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                style={{ background: 'var(--bg-elevated)', color: 'var(--text-secondary)' }}
-              >
-                {partner.name}
-              </div>
-            </motion.a>
-          ))}
+          {/* Scrolling container */}
+          <div className="flex animate-carousel hover:pause-animation">
+            {duplicatedPartners.map((partner, index) => (
+              <PartnerLogo key={`${partner.name}-${index}`} partner={partner} />
+            ))}
+          </div>
         </motion.div>
 
         {/* Bottom note */}
         <motion.p
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center text-[10px] sm:text-xs md:text-sm mt-12 sm:mt-16"
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-center text-[10px] sm:text-xs md:text-sm mt-10 sm:mt-14 max-w-6xl mx-auto px-4"
           style={{ color: 'var(--text-muted)' }}
         >
           Obrigado a todos que tornam este projeto possível

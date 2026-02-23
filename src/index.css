@@ -356,6 +356,51 @@ nav.glass {
     linear-gradient(var(--border-color) 1px, transparent 1px),
     linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
   background-size: 40px 40px;
+  animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+/* Pause grid animation on reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .bg-grid {
+    animation: none;
+  }
+}
+
+/* ========================================
+   INFINITE CAROUSEL
+   ======================================== */
+
+.animate-carousel {
+  animation: carousel 30s linear infinite;
+}
+
+.animate-carousel:hover {
+  animation-play-state: paused;
+}
+
+@keyframes carousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause carousel on reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-carousel {
+    animation: none;
+  }
 }
 
 .video-overlay {
