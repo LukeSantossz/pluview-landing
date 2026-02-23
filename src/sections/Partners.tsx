@@ -46,7 +46,7 @@ function PartnerLogo({ partner }: { partner: Partner }) {
       className="group flex-shrink-0 mx-6 sm:mx-8 md:mx-10"
       title={partner.name}
     >
-      {/* Card with consistent white/light background for all logos */}
+      {/* Card with consistent white background for all logos */}
       <div
         className="flex items-center justify-center p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl bg-white"
         style={{
@@ -63,22 +63,6 @@ function PartnerLogo({ partner }: { partner: Partner }) {
           style={{
             maxHeight: '110px',
             maxWidth: '280px',
-          }}
-          loading="lazy"
-          onError={(e) => {
-            const target = e.target as HTMLImageElement
-            // Try to reload once
-            if (!target.dataset.retried) {
-              target.dataset.retried = 'true'
-              target.src = partner.logo + '?retry=1'
-            } else {
-              // Show fallback text
-              target.style.display = 'none'
-              const parent = target.parentElement
-              if (parent) {
-                parent.innerHTML = `<span class="font-display font-bold text-lg sm:text-xl text-gray-700">${partner.name}</span>`
-              }
-            }
           }}
         />
       </div>
