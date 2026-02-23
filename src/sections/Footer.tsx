@@ -11,7 +11,7 @@ const navLinks = [
 ]
 
 const institutionLinks = [
-  { href: 'https://institutocultivar.com.br/', label: 'Instituto Cultivar', icon: InstitutoCultivarIcon },
+  { href: 'https://institutocultivar.com.br/', label: 'Instituto Cultivar Progresso', icon: InstitutoCultivarIcon },
   { href: 'https://www.grupoprogresso.agr.br/', label: 'Grupo Progresso', icon: GrupoProgressoIcon },
   { href: 'https://github.com/FhSoftwareSolutions', label: 'Nossa Organização', icon: Github },
 ]
@@ -28,7 +28,7 @@ export default function Footer() {
       <div className="absolute inset-0 bg-grid opacity-10" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="grid sm:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Brand */}
           <div>
             <a
@@ -100,14 +100,14 @@ export default function Footer() {
         <div className="h-px mb-4" style={{ background: 'var(--border-color)' }} />
 
         {/* Bottom */}
-        <div className="flex items-center justify-between">
-          <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-0 text-center sm:text-left">
+          <p className="text-[10px] sm:text-xs" style={{ color: 'var(--text-muted)' }}>
             © {currentYear} PluView
           </p>
 
-          <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
+          <p className="text-[10px] sm:text-xs" style={{ color: 'var(--text-muted)' }}>
             Desenvolvido com{' '}
-            <Heart className="w-3 h-3 inline text-red-500 mx-0.5" fill="currentColor" />{' '}
+            <Heart className="w-2.5 h-2.5 sm:w-3 sm:h-3 inline text-red-500 mx-0.5" fill="currentColor" />{' '}
             por{' '}
             <a
               href="https://www.linkedin.com/in/lucas-gon%C3%A7alvessz/"

@@ -101,19 +101,19 @@ export default function Features() {
               className="group"
             >
               <div
-                className="card rounded-xl sm:rounded-2xl p-4 sm:p-6 h-full"
+                className="card rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 h-full"
                 style={feature.highlight ? { borderColor: 'rgba(16, 185, 129, 0.3)', background: 'var(--accent-soft)' } : {}}
               >
                 <div
-                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center mb-3 sm:mb-4 transition-all group-hover:scale-110"
+                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-3 md:mb-4 transition-all group-hover:scale-110"
                   style={{ background: feature.highlight ? 'var(--accent)' : 'var(--accent-soft)' }}
                 >
-                  <feature.icon className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: feature.highlight ? 'white' : 'var(--accent)' }} />
+                  <feature.icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" style={{ color: feature.highlight ? 'white' : 'var(--accent)' }} />
                 </div>
-                <h3 className="font-display text-sm sm:text-base md:text-lg font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
+                <h3 className="font-display text-xs sm:text-sm md:text-base lg:text-lg font-semibold mb-1 sm:mb-2" style={{ color: 'var(--text-primary)' }}>
                   {feature.title}
                 </h3>
-                <p className="text-xs sm:text-sm leading-relaxed" style={{ color: 'var(--text-tertiary)' }}>
+                <p className="text-[10px] sm:text-xs md:text-sm leading-relaxed" style={{ color: 'var(--text-tertiary)' }}>
                   {feature.description}
                 </p>
               </div>

@@ -41,7 +41,7 @@ Landing page institucional que apresenta o projeto PluView — uma estação de 
 
 ## Qual é a ambição do projeto?
 
-Este projeto **será lançado em produção** como site oficial do PluView. A landing page é parte da estratégia de divulgação do projeto de IoT agrícola desenvolvido no Instituto Cultivar.
+Este projeto **será lançado em produção** como site oficial do PluView. A landing page é parte da estratégia de divulgação do projeto de IoT agrícola desenvolvido no Instituto Cultivar Progresso.
 
 O PluView coleta 5 variáveis climáticas em tempo real, de forma autossustentável (energia solar) e conectada (IoT), permitindo gestão hídrica inteligente para o agronegócio brasileiro.
 
@@ -56,12 +56,12 @@ O PluView coleta 5 variáveis climáticas em tempo real, de forma autossustentá
 - Logo personalizada SVG (gota + ondas IoT)
 - Seção About focada em monitoramento inteligente e 5 variáveis climáticas
 - Grid de funcionalidades com destaques visuais
-- Galeria de fotos (Fazenda Progresso, Instituto Cultivar, Equipe)
+- Galeria de fotos (Fazenda Progresso, Instituto Cultivar Progresso, Equipe)
 - Seção Roadmap com visão de futuro do projeto
 - Cards da equipe centralizados com links LinkedIn
 - Sistema de agendamento com calendário funcional e integração Google Meet
 - Formulário de contato com sanitização de inputs e validação
-- Footer com links para Instituto Cultivar, Grupo Progresso e GitHub
+- Footer com links para Instituto Cultivar Progresso, Grupo Progresso e GitHub
 - Sistema de tema claro/escuro harmonioso e elegante
 - Responsividade completa (mobile, tablet, notebook, desktop)
 - Meta tags SEO e Open Graph
@@ -77,7 +77,7 @@ O PluView coleta 5 variáveis climáticas em tempo real, de forma autossustentá
 
 1. **Agendamento de reuniões** — O sistema redireciona para o Google Calendar do usuário. O convite é enviado automaticamente para `fhservicesofc@gmail.com` quando o usuário confirma o evento.
 
-2. **Links de instituições externos** — Os links para Instituto Cultivar e Grupo Progresso apontam para domínios externos que podem sofrer alterações.
+2. **Links de instituições externos** — Os links para Instituto Cultivar Progresso e Grupo Progresso apontam para domínios externos que podem sofrer alterações.
 
 3. **Orientador sem LinkedIn** — Reinaldo Bernardi não possui link para perfil LinkedIn cadastrado.
 

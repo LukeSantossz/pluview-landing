@@ -209,7 +209,7 @@ export default function Team() {
           </div>
 
           {/* Second row - 3 members centered */}
-          <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-xl mx-auto">
             {teamMembers.slice(4).map((member, i) => (
               <MemberCard
                 key={member.name}
@@ -236,7 +236,7 @@ export default function Team() {
             <div className="h-px w-16 sm:w-24" style={{ background: 'var(--border-color)' }} />
           </motion.div>
 
-          <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-xl mx-auto">
             {mentors.map((mentor, i) => (
               <MemberCard
                 key={mentor.name}

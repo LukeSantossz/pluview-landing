@@ -104,20 +104,20 @@ export default function About() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {[
               { value: '5', label: 'variáveis coletadas', accent: true },
               { value: '100%', label: 'autossustentável', accent: true },
               { value: '24/7', label: 'tempo real', accent: true },
               { value: 'IoT', label: 'conectividade', accent: true },
             ].map((stat) => (
-              <div key={stat.label} className="card rounded-xl p-4 text-center">
+              <div key={stat.label} className="card rounded-xl p-3 sm:p-4 text-center">
                 <div
-                  className={`font-display text-xl sm:text-2xl md:text-3xl font-bold mb-1 ${stat.accent ? 'gradient-text' : ''}`}
+                  className={`font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 ${stat.accent ? 'gradient-text' : ''}`}
                 >
                   {stat.value}
                 </div>
-                <div className="text-xs sm:text-sm" style={{ color: 'var(--text-muted)' }}>{stat.label}</div>
+                <div className="text-[10px] sm:text-xs md:text-sm leading-tight" style={{ color: 'var(--text-muted)' }}>{stat.label}</div>
               </div>
             ))}
           </div>
@@ -215,19 +215,19 @@ export default function About() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="grid grid-cols-3 gap-3 sm:gap-6"
+          className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6"
         >
           {[
             { value: 5, suffix: '', label: 'Variáveis climáticas' },
             { value: 24, suffix: '/7', label: 'Monitoramento' },
             { value: 100, suffix: '%', label: 'Energia solar' },
           ].map((stat) => (
-            <div key={stat.label} className="card rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 text-center">
-              <div className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-2">
+            <div key={stat.label} className="card rounded-xl sm:rounded-2xl p-3 sm:p-5 md:p-8 text-center">
+              <div className="font-display text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold gradient-text mb-1 sm:mb-2">
                 <AnimatedCounter value={stat.value} inView={inView} />
                 <span style={{ color: 'var(--text-muted)' }}>{stat.suffix}</span>
               </div>
-              <div className="text-xs sm:text-sm uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>
+              <div className="text-[10px] sm:text-xs md:text-sm uppercase tracking-wider leading-tight" style={{ color: 'var(--text-muted)' }}>
                 {stat.label}
               </div>
             </div>

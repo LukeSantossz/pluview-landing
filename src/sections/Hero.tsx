@@ -78,7 +78,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="mt-12 sm:mt-16 grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto"
+          className="mt-8 sm:mt-12 md:mt-16 grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 max-w-2xl mx-auto"
         >
           {[
             { value: '5', label: 'Variáveis' },
@@ -86,8 +86,8 @@ export default function Hero() {
             { value: '100%', label: 'Autônomo' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="font-display text-xl sm:text-2xl md:text-3xl font-bold gradient-text">{stat.value}</div>
-              <div className="text-xs sm:text-sm" style={{ color: 'var(--text-muted)' }}>{stat.label}</div>
+              <div className="font-display text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold gradient-text">{stat.value}</div>
+              <div className="text-[10px] sm:text-xs md:text-sm" style={{ color: 'var(--text-muted)' }}>{stat.label}</div>
             </div>
           ))}
         </motion.div>

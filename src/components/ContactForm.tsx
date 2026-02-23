@@ -342,7 +342,7 @@ ${safe.message}`
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.2 }}
-            className="relative w-full max-w-xl rounded-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto"
+            className="relative w-full max-w-xl rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 max-h-[90vh] overflow-y-auto"
             style={{ background: 'var(--bg-card)', border: '1px solid var(--border-color)' }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -603,13 +603,13 @@ ${safe.message}`
                       </div>
 
                       {availableTimeSlots.length > 0 ? (
-                        <div className="grid grid-cols-4 sm:grid-cols-5 gap-2">
+                        <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
                           {availableTimeSlots.map((time) => (
                             <button
                               key={time}
                               type="button"
                               onClick={() => setSelectedTime(time)}
-                              className={`py-2.5 px-3 rounded-lg text-sm font-medium transition-all
+                              className={`py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg text-xs sm:text-sm font-medium transition-all
                                 ${selectedTime === time
                                   ? 'bg-[var(--accent)] text-white'
                                   : 'bg-[var(--bg-tertiary)] hover:bg-[var(--accent-soft)]'

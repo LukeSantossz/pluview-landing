@@ -70,7 +70,7 @@ export default function Roadmap() {
         </motion.div>
 
         {/* Roadmap Grid */}
-        <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {roadmapItems.map((item, index) => (
             <motion.div
               key={item.phase}

@@ -14,7 +14,7 @@ const galleryItems = [
   {
     src: '/imgs/foto_ex_grupo_formal.jpg',
     title: 'Apresentação Institucional',
-    location: 'Instituto Cultivar',
+    location: 'Instituto Cultivar Progresso',
     description: 'Demonstração da solução para parceiros e investidores durante o Dia de Campo anual.',
     icon: Building2,
   },
@@ -40,7 +40,7 @@ const locations = [
   },
   {
     title: 'Parceiro Institucional',
-    place: 'Instituto Cultivar',
+    place: 'Instituto Cultivar Progresso',
     description: 'Apoio técnico e estrutural',
   },
 ]
@@ -71,7 +71,7 @@ export default function Gallery() {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-6">
             <Beaker className="w-4 h-4" style={{ color: 'var(--tertiary)' }} />
             <span className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>
-              Prova de Conceito — Instituto Cultivar
+              Prova de Conceito — Instituto Cultivar Progresso
             </span>
           </div>
 
@@ -133,20 +133,20 @@ export default function Gallery() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="grid sm:grid-cols-3 gap-4 sm:gap-6"
+          className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6"
         >
           {locations.map((loc) => (
             <div
               key={loc.title}
-              className="card rounded-xl p-5 sm:p-6 text-center"
+              className="card rounded-xl p-4 sm:p-6 text-center"
             >
-              <h4 className="text-xs uppercase tracking-wider mb-2" style={{ color: 'var(--text-muted)' }}>
+              <h4 className="text-[10px] sm:text-xs uppercase tracking-wider mb-1 sm:mb-2" style={{ color: 'var(--text-muted)' }}>
                 {loc.title}
               </h4>
-              <p className="font-display text-lg font-semibold mb-1" style={{ color: 'var(--text-primary)' }}>
+              <p className="font-display text-base sm:text-lg font-semibold mb-0.5 sm:mb-1" style={{ color: 'var(--text-primary)' }}>
                 {loc.place}
               </p>
-              <p className="text-sm" style={{ color: 'var(--text-tertiary)' }}>
+              <p className="text-xs sm:text-sm" style={{ color: 'var(--text-tertiary)' }}>
                 {loc.description}
               </p>
             </div>
