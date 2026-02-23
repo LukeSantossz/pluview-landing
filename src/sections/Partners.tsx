@@ -48,7 +48,7 @@ const partners: Partner[] = [
   {
     name: 'LMPP',
     description: 'Laboratório de Monitoramento e Proteção de Plantas',
-    logo: 'https://lmpp.fatecpompeia.edu.br/images/logo-lmpp.png',
+    logo: 'https://lh3.googleusercontent.com/sitesv/APaQ0SSIdcZOvxda5H5lfaYhly0TC-jUv_B-TSL0n4xSmeQWIyMPzUuwVCRRYckSlqKcOpCANp52gYwpqHt19zsSXfx87vGf8fPiZuHHQu722E6ma6bu2xu5H3bsilp4Rq0IDiBmMRVMWrMvVZ-FjYhysLfZOXGcG_XjwPNYwiUp1jlZbM6W0tlVMnGt=w16383',
     url: 'https://lmpp.fatecpompeia.edu.br/',
     accentColor: '#1a5f2a',
     accentColorLight: '#28a745',
