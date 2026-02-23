@@ -32,7 +32,7 @@ const partners: Partner[] = [
   },
   {
     name: 'LMPP',
-    logo: 'https://lh3.googleusercontent.com/sitesv/APaQ0SSIdcZOvxda5H5lfaYhly0TC-jUv_B-TSL0n4xSmeQWIyMPzUuwVCRRYckSlqKcOpCANp52gYwpqHt19zsSXfx87vGf8fPiZuHHQu722E6ma6bu2xu5H3bsilp4Rq0IDiBmMRVMWrMvVZ-FjYhysLfZOXGcG_XjwPNYwiUp1jlZbM6W0tlVMnGt=w16383',
+    logo: 'https://fsnt.org.br/wp-content/uploads/2023/09/logo-LMPP.jpg',
     url: 'https://lmpp.fatecpompeia.edu.br/',
   },
 ]
@@ -43,28 +43,28 @@ function PartnerLogo({ partner }: { partner: Partner }) {
       href={partner.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex-shrink-0 mx-6 sm:mx-8 md:mx-12"
+      className="group flex-shrink-0 mx-8 sm:mx-10 md:mx-14"
       title={partner.name}
     >
       <div
-        className="flex items-center justify-center p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-white transition-all duration-300 group-hover:shadow-lg group-hover:scale-105"
+        className="flex items-center justify-center p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl bg-white transition-all duration-300 group-hover:shadow-xl group-hover:scale-105"
         style={{
-          minWidth: '160px',
-          maxWidth: '220px',
-          height: '90px',
+          minWidth: '200px',
+          maxWidth: '280px',
+          height: '120px',
         }}
       >
         <img
           src={partner.logo}
           alt={partner.name}
           className="max-w-full max-h-full object-contain opacity-60 group-hover:opacity-100 transition-all duration-300"
-          style={{ maxHeight: '55px' }}
+          style={{ maxHeight: '80px' }}
           onError={(e) => {
             const target = e.target as HTMLImageElement
             target.style.display = 'none'
             const parent = target.parentElement
             if (parent) {
-              parent.innerHTML = `<span class="font-display font-bold text-sm sm:text-base text-gray-500 group-hover:text-gray-800 transition-colors">${partner.name}</span>`
+              parent.innerHTML = `<span class="font-display font-bold text-base sm:text-lg text-gray-500 group-hover:text-gray-800 transition-colors">${partner.name}</span>`
             }
           }}
         />
