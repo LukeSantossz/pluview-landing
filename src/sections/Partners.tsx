@@ -32,7 +32,7 @@ const partners: Partner[] = [
   },
   {
     name: 'LMPP',
-    logo: 'https://fsnt.org.br/wp-content/uploads/2023/09/logo-LMPP.jpg',
+    logo: '/imgs/logo-lmpp.jpg',
     url: 'https://lmpp.fatecpompeia.edu.br/',
   },
 ]
