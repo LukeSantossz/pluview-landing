@@ -6,6 +6,7 @@ const navLinks = [
   { href: '#about', label: 'Nossa História' },
   { href: '#features', label: 'Funcionalidades' },
   { href: '#gallery', label: 'Galeria' },
+  { href: '#partners', label: 'Parceiros' },
   { href: '#team', label: 'Equipe' },
   { href: '#contact', label: 'Contato' },
 ]

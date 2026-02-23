@@ -137,7 +137,7 @@ export default function Roadmap() {
         </motion.p>
       </div>
 
-      {/* Transition to Team */}
+      {/* Transition to Partners */}
       <SectionTransition position="bottom" variant="curve" />
     </section>
   )
