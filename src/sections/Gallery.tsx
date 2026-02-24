@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { MapPin, Building2, Users2, Beaker } from 'lucide-react'
 import SectionTransition from '../components/SectionTransition'
+import AnimatedMap from '../components/AnimatedMap'
 
 const galleryItems = [
   {
@@ -21,7 +22,7 @@ const galleryItems = [
   {
     src: '/imgs/foto_ex_grupo_informal.jpg',
     title: 'Equipe de Desenvolvimento',
-    location: 'Pompeia, São Paulo',
+    location: 'CITAP, Fatec Pompeia',
     description: 'Os 7 desenvolvedores que transformaram a ideia em realidade durante meses de trabalho.',
     icon: Users2,
   },
@@ -30,7 +31,7 @@ const galleryItems = [
 const locations = [
   {
     title: 'Sede do Projeto',
-    place: 'Pompeia, São Paulo',
+    place: 'CITAP, Fatec Pompeia',
     description: 'Desenvolvimento e montagem',
   },
   {
@@ -83,6 +84,16 @@ export default function Gallery() {
           <p className="text-base sm:text-lg max-w-2xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
             Momentos que marcaram o desenvolvimento e validação em campo
           </p>
+        </motion.div>
+
+        {/* Interactive Map */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mb-12 sm:mb-16"
+        >
+          <AnimatedMap />
         </motion.div>
 
         {/* Gallery Grid */}

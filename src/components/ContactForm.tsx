@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Video, Mail, Send, ChevronLeft, ChevronRight, Clock, Shield } from 'lucide-react'
+import { X, Video, Mail, Send, ChevronLeft, ChevronRight, Clock, Shield, Users } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 interface ContactFormProps {

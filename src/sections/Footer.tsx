@@ -1,4 +1,4 @@
-import { Heart, ExternalLink, MapPin, Github } from 'lucide-react'
+import { Heart, ExternalLink, MapPin, Github, Building2 } from 'lucide-react'
 import SectionTransition from '../components/SectionTransition'
 import { PluViewLogo, InstitutoCultivarIcon, GrupoProgressoIcon } from '../components/Icons'
 
@@ -14,6 +14,7 @@ const navLinks = [
 const institutionLinks = [
   { href: 'https://institutocultivar.com.br/', label: 'Instituto Cultivar Progresso', icon: InstitutoCultivarIcon },
   { href: 'https://www.grupoprogresso.agr.br/', label: 'Grupo Progresso', icon: GrupoProgressoIcon },
+  { href: 'https://fsnt.org.br/', label: 'Fundação Shunji Nishimura', icon: Building2 },
   { href: 'https://github.com/FhSoftwareSolutions', label: 'Nossa Organização', icon: Github },
 ]
 
