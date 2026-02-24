@@ -379,29 +379,14 @@ nav.glass {
    INFINITE CAROUSEL
    ======================================== */
 
-.animate-carousel {
-  display: flex;
-  width: fit-content;
-  animation: carousel 20s linear infinite;
+.partner-logo-item {
+  flex-shrink: 0;
 }
 
-.animate-carousel:hover {
-  animation-play-state: paused;
-}
-
-@keyframes carousel {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* Pause carousel on reduced motion preference */
+/* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
-  .animate-carousel {
-    animation: none;
+  .will-change-transform {
+    will-change: auto;
   }
 }
 
